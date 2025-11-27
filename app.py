@@ -28,7 +28,10 @@ def init_db():
 
 @app.route('/')
 def index():
-    return send_from_directory(APP_DIR, 'training_form.html')
+   from flask import render_template
+@app.route("/")
+def index():
+    return render_template("training_form.html")
 
 @app.route('/submit', methods=['POST'])
 def submit():
