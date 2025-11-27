@@ -3,12 +3,12 @@ from flask import Flask, request, jsonify, render_template
 import sqlite3
 from datetime import datetime
 import os
-
+app = Flask(__name__)
 DB_PATH = "/tmp/training_submissions.db"
 print("DB PATH =", DB_PATH)
 
 
-app = Flask(__name__, static_folder=APP_DIR)
+
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)
