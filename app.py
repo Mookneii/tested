@@ -26,9 +26,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-@app.route('/')
-def index():
-   from flask import render_template
 @app.route("/")
 def index():
     return render_template("training_form.html")
