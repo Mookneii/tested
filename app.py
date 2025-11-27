@@ -26,6 +26,8 @@ def init_db():
     """)
     conn.commit()
     conn.close()
+    
+init_db()
 
 @app.route("/")
 def index():
@@ -85,7 +87,3 @@ def download_csv():
     return app.response_class(csv_data, mimetype='text/csv',
                               headers={'Content-Disposition':'attachment;filename=submissions.csv'})
 
-if __name__ == '__main__':
-    init_db()
-    # For local demo only. If you want to allow other devices on LAN, change host below (see notes).
-    app.run(host='127.0.0.1', port=5000, debug=False)
