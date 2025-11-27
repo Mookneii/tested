@@ -1,11 +1,11 @@
 # app.py
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 from datetime import datetime
 import os
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(APP_DIR, 'training_submissions.db')
+DB_PATH = "/tmp/training_submissions.db"
 
 app = Flask(__name__, static_folder=APP_DIR)
 
